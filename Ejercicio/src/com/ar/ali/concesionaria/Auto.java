@@ -6,7 +6,7 @@ public class Auto extends Vehiculo {
 
 	// Constructor clase Auto
 	public Auto(String marca, String modelo, int puertas, double precio) {
-		super(marca, modelo, puertas);
+		super(marca, modelo, precio);
 		this.puertas = puertas;
 	}
 
@@ -20,8 +20,13 @@ public class Auto extends Vehiculo {
 
 	@Override
 	public String mostrarCaracteristicas() {
-		return "Marca: " + marca + " // Modelo: " + modelo + " // Puertas: " + puertas
-				+ " // Precio: $" +precio + "";
+		return "Marca: " + marca + " // Modelo: " + modelo + " // Puertas: " 
+				+ puertas+ " // Precio: $" +precio + "";
+	}
+
+	@Override
+	public String mostrarVehiculoMasCaro() {
+		return null;
 	}
 	
 }

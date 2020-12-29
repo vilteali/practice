@@ -16,12 +16,26 @@ public abstract class Vehiculo {
 	
 	// Definimos metodos para mostrar caracteristicas
 	public abstract String mostrarCaracteristicas();
+	public abstract String mostrarVehiculoMasCaro();
 	
 	// Método para listar vehiculos
 	public static String listarVehiculos(Vehiculo vehiculo) {
-		if(vehiculo instanceof Auto || vehiculo instanceof Moto)
+		if(vehiculo instanceof Auto || vehiculo instanceof Moto) 
 			return vehiculo.mostrarCaracteristicas();
 				return null;
+	}
+	
+	public String vehiculoMasCaro(Vehiculo vehiculo) {
+		
+		Vehiculo[] vehiculos = {vehiculo};
+		double precioMayor = 0;
+		
+		for (Vehiculo e : vehiculos) {
+			if(vehiculo.getPrecio() > precioMayor)
+				precioMayor = vehiculo.getPrecio();
+		}
+		
+		return null;
 	}
 	
 	public String getMarca() {

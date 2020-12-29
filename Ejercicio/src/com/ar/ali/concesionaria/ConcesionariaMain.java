@@ -14,7 +14,7 @@ public class ConcesionariaMain {
 		Vehiculo[] vehiculos = {v1, v2, v3, v4};
 		
 		for (Vehiculo vehiculo : vehiculos) {
-				System.out.println(Vehiculo.listarVehiculos(vehiculo));
+			System.out.println(Vehiculo.listarVehiculos(vehiculo));
 			
 		}
 		

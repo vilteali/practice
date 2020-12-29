@@ -23,4 +23,9 @@ public class Moto extends Vehiculo {
 				+ cilindrada+ " // Precio: $" +precio+ "";
 	}
 
+	@Override
+	public String mostrarVehiculoMasCaro() {
+		return null;
+	}
+
 }
