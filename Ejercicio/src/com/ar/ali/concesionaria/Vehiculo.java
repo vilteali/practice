@@ -1,54 +1,27 @@
 package com.ar.ali.concesionaria;
 
-import java.util.Iterator;
-
-public class Vehiculo implements mostrarCaracteristicas {
+public abstract class Vehiculo {
 
 	// Atributos de la clase
-	private String marca;
-	private String modelo;
-	private String cilindrada;
-	private int puertas;
-	private double precio;
+	protected String marca;
+	protected String modelo;
+	protected double precio;
 	
-	// Constructor primero
-	public Vehiculo(String marca, String modelo, int puertas, double precio) {
+	// Constructor general Vehiculo
+	public Vehiculo(String marca, String modelo, double precio) {
 		this.marca=marca;
 		this.modelo=modelo;
-		this.puertas=puertas;
-		this.precio=precio;
-		
-	}
-	
-	// Constructor segundo
-	public Vehiculo(String marca, String modelo, String cilindrada, double precio) {
-		this.marca=marca;
-		this.modelo=modelo;
-		this.cilindrada=cilindrada;
 		this.precio=precio;
 	}
 	
-	// Definimos que va mostrar el primer método implementado
-	@Override
-	public String mostrarCaracteristicas() {
-		return "Marca: " + marca + " // Modelo: " + modelo + " // Puertas: " + puertas
-				+ " // Precio: $" +precio + "";
-	}
-	
-	// Definimos que va mostrar el segundo método implementado
-	@Override
-	public String mostrarCaracteristicas2() {
-		return "Marca: " + marca + " // Modelo: " + modelo + " // Cilindrada: " 
-				+ cilindrada+ " // Precio: $" +precio+ "";
-	}
+	// Definimos metodos para mostrar caracteristicas
+	public abstract String mostrarCaracteristicas();
 	
 	// Método para listar vehiculos
 	public static String listarVehiculos(Vehiculo vehiculo) {
-		
-		if(vehiculo.getPuertas() != 0 || vehiculo.getCilindrada() == null) 
+		if(vehiculo instanceof Auto || vehiculo instanceof Moto)
 			return vehiculo.mostrarCaracteristicas();
-				return vehiculo.mostrarCaracteristicas2();
-				
+				return null;
 	}
 	
 	public String getMarca() {
@@ -62,18 +35,6 @@ public class Vehiculo implements mostrarCaracteristicas {
 	}
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
-	}
-	public String getCilindrada() {
-		return cilindrada;
-	}
-	public void setCilindrada(String cilindrada) {
-		this.cilindrada = cilindrada;
-	}
-	public int getPuertas() {
-		return puertas;
-	}
-	public void setPuertas(int puertas) {
-		this.puertas = puertas;
 	}
 	public double getPrecio() {
 		return precio;
