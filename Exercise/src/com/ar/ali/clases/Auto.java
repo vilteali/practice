@@ -20,7 +20,7 @@ public class Auto extends Vehiculo {
 	}
 
 	@Override
-	public String mostrarVehiculoMasCaroYBarato(Vehiculo vehiculo) {
+	public String mostrarVehiculoMasCaro(Vehiculo vehiculo) {
 		double temp = 0;
 		double maxPrice = 0;
 		
@@ -35,13 +35,10 @@ public class Auto extends Vehiculo {
 			return priceMax;
 		}		
 
-		
-		
 		return null;
 	}
 	
 	private List<Vehiculo> listVehiculo;
-	
 	private int puertas;
 	
 	public int getPuertas() {

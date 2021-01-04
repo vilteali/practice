@@ -15,7 +15,7 @@ public class Moto extends Vehiculo {
 	}
 
 	@Override
-	public String mostrarVehiculoMasCaroYBarato(Vehiculo vehiculo) {
+	public String mostrarVehiculoMasCaro(Vehiculo vehiculo) {
 		
 		List<Vehiculo> list = new ArrayList<>();
 		list.add(vehiculo);
@@ -23,15 +23,13 @@ public class Moto extends Vehiculo {
 		double temp = 0;
 		double maxPrice = 0;
 		
-		for (Vehiculo e : list) {
-			temp = e.getPrecio();
-			
+		for (Vehiculo e : listVehiculo) {
 			if(e.getPrecio() > maxPrice)
-				temp = e.getPrecio();
-				
-			if(temp<maxPrice)
-				maxPrice=temp;
-		}
+				maxPrice = e.getPrecio();
+			
+			String priceMax = ("Vehículo más caro: "+vehiculo.getMarca()+" "+vehiculo.getModelo());
+			return priceMax;
+		}	
 		
 		return null;
 	}

@@ -1,22 +1,29 @@
 package com.ar.ali.clases;
 
-import com.ar.ali.interfaces.vehiculoMasCaroYBarato;
+import java.util.List;
 
-public abstract class Vehiculo implements vehiculoMasCaroYBarato {
+import com.ar.ali.interfaces.VehiculoMasBarato;
+import com.ar.ali.interfaces.VehiculoMasCaro;
+
+public abstract class Vehiculo implements VehiculoMasCaro, VehiculoMasBarato {
 	
 	public abstract String mostrarCaracteristicas();
 	
 	// Listamos los vehiculos
-	static String listarVehiculos (Vehiculo vehiculo) {
+	public static String listarVehiculos (Vehiculo vehiculo) {
 		
 		if(vehiculo instanceof Moto || vehiculo instanceof Auto)
+			
 			return vehiculo.mostrarCaracteristicas();
-		
-		return null;
+			return vehiculo.mostrarVehiculoMasCaro(vehiculo);
 	}
 	
-	static String listarMasCaroYBarato (Vehiculo vehiculo) {
-		return vehiculo.mostrarVehiculoMasCaroYBarato(vehiculo);
+	public String mostrarVehiculoMasCaro (Vehiculo vehiculo) {
+		return vehiculo.mostrarVehiculoMasCaro(vehiculo);
+	}
+	
+	public String mostrarVehiculoMasBarato (Vehiculo vehiculo) {
+		return vehiculo.mostrarVehiculoMasBarato(vehiculo);
 	}
 	
 	public Vehiculo(String marca, String modelo, Double precio) {
@@ -28,6 +35,7 @@ public abstract class Vehiculo implements vehiculoMasCaroYBarato {
 	protected String marca;
 	protected String modelo;
 	protected Double precio;
+	protected List<Vehiculo> listVehiculo;
 	
 	public String getMarca() {
 		return marca;
